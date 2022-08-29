@@ -7,9 +7,13 @@ import (
 )
 
 func main() {
+	args := os.Args
+	if len(args) != 2 {
+		fmt.Println("Nothing There!!")
+		return
+	}
 	standard, _ := os.ReadFile("standard")
 	s := strings.Split(string(standard), "\n")
-	args := os.Args
 	txt := args[1] // strings.Join(args[1:], " ")
 	txtTable := strings.Split(txt, ("\\" + "n"))
 	if strings.Join(txtTable, "") == "" {
